@@ -21,3 +21,23 @@ def character_total(entire_text):
     return character
 
 
+def sort_on(items):
+    return items["num"]
+
+
+def sorted_list(letters):
+    sorted_list = []
+    for letter in letters:
+        indie_dict = dict(char= letter, num = letters[letter])
+        sorted_list.append(indie_dict)
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
+    
+    
+          
+
+
+
+
+
+
