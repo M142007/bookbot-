@@ -1,14 +1,20 @@
 from stats import num_words, character_total, sorted_list
+import sys
 
-
-def get_book_text(frankenstein):
-    with open(frankenstein) as f:
+def get_book_text(book):
+    with open(book) as f:
         file_contents = f.read()
     return file_contents
 
+def check_arguments(argument):
+    if len(argument) == 1:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
 
 def main():
-    entire_text = get_book_text("./books/frankenstein.txt")
+    check_arguments(sys.argv)
+    entire_text = get_book_text(sys.argv[1])
     print(f'''================== BOOKBOT ==================
 Analyzing book found at books/frnkenstein.txt...
 ----------------- Word Count ------------------
