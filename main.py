@@ -16,7 +16,7 @@ def main():
     check_arguments(sys.argv)
     entire_text = get_book_text(sys.argv[1])
     print(f'''================== BOOKBOT ==================
-Analyzing book found at books/frnkenstein.txt...
+Analyzing book found at {sys.argv[1]}...
 ----------------- Word Count ------------------
 Found {num_words(entire_text)} total words
 --------------- Character Count ---------------''')
